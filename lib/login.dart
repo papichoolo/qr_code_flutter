@@ -27,8 +27,8 @@ class _LoginScreenState extends State<LoginScreen> {
   String password = "";
   String errorMessage = "";
 
-  // Replace 'guest123' with the correct password
-  final String correctPassword = 'guest123';
+  // Replace with the correct password
+  final String correctPassword = 'dscmadethis1';
 
   void _login() {
     if (password == correctPassword) {
