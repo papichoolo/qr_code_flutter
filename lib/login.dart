@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'qr_code_scanner.dart'; 
 import 'home.dart'; 
 void main() {
   runApp(const MyApp());
@@ -41,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => const HomeScreen(),
         ),
         );
     } else {
@@ -71,8 +70,10 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               decoration: const InputDecoration(
                 labelText: 'Universal ID',
+                border: OutlineInputBorder(),
               ),
             ),
+            const SizedBox(height: 10),
             TextField(
               onChanged: (value) {
                 setState(() {
@@ -82,11 +83,16 @@ class _LoginScreenState extends State<LoginScreen> {
               obscureText: true,
               decoration: const InputDecoration(
                 labelText: 'Password',
+                border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _login,
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white, backgroundColor: Colors.blue, // Text color
+                padding: const EdgeInsets.all(12), // Button padding
+              ),
               child: const Text('Login'),
             ),
             if (errorMessage.isNotEmpty)

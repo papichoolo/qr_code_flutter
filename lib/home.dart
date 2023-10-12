@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'qr_code_scanner.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: const Text('Home Screen'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -14,11 +16,18 @@ class HomeScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => QRScannerScreen(),
+                builder: (context) => const QRScannerScreen(),
               ),
             );
           },
-          child: Text('Scan QR'),
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white, backgroundColor: Colors.green, // Text color
+            padding: const EdgeInsets.all(12), // Button padding
+          ),
+          child: const Text(
+            'Scan QR',
+            style: TextStyle(fontSize: 20),
+          ),
         ),
       ),
     );

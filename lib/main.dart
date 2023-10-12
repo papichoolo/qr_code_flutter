@@ -1,5 +1,4 @@
 import 'package:code_scanner/login.dart';
-import 'package:code_scanner/qr_code_scanner.dart';
 import 'package:flutter/material.dart';
 
 void main() {
