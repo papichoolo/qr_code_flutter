@@ -1,3 +1,4 @@
+import 'package:code_scanner/login.dart';
 import 'package:code_scanner/qr_code_scanner.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const QRScannerScreen()
+      home: const LoginScreen()
       
     );
   }
