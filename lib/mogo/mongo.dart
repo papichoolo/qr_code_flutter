@@ -60,7 +60,6 @@ import 'dart:convert';
 import 'qr_code_scanner.dart';
 
 void main() async {
-  final String awsEndpoint = 'https://2zapz4stsf4v7lqy6zd7woteau0qcrvi.lambda-url.ap-south-1.on.aws/markPresent';
   final String requestBodyJson = '{regNo: ""}'; // Replace with your desired JSON request body
 
   final response = await http.patch(
