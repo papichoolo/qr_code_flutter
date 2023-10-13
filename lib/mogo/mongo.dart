@@ -1,5 +1,7 @@
  import 'dart:convert';
  import 'package:http/http.dart' as http;
+ import 'secrets.dart';
+ 
 
 Future<void> updateAttendance(String scannedCode) async {
   /*final db = Db('mongodb+srv://foundanand:bHKKExvQUotd8Yp7@vitevents.jpidt5u.mongodb.net/?retryWrites=true&w=majority/datascienceclub');
@@ -30,11 +32,11 @@ Future<void> updateAttendance(String scannedCode) async {
   }
 
   await db.close();*/
-  const String awsEndpoint = 'https://2zapz4stsf4v7lqy6zd7woteau0qcrvi.lambda-url.ap-south-1.on.aws/markPresent';
+  const String awsEnd = awsEndpoint;
   final String requestBodyJson = '{"regno": "$scannedCode"}'; // Replace with your desired JSON request body
 
   final response = await http.patch(
-    Uri.parse(awsEndpoint),
+    Uri.parse(awsEnd),
     headers: {
       'Content-Type': 'application/json',
       // Add any other necessary headers here
