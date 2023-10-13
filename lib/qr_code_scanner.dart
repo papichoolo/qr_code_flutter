@@ -55,8 +55,8 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
             ),
             ElevatedButton(
         onPressed: () {
-          // Call the updateAttendance function with the scannedCode
-          updateAttendance(scannedCode);
+          //showSuccessPopup(context);
+          updateAttendance(scannedCode, context);
         },
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,

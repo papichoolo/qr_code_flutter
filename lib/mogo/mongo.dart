@@ -1,9 +1,9 @@
  import 'dart:convert';
- import 'package:http/http.dart' as http;
+import 'package:http/http.dart' as http;
  import 'secrets.dart';
- 
+ import 'package:flutter/material.dart';
 
-Future<void> updateAttendance(String scannedCode) async {
+Future<void> updateAttendance(String scannedCode, BuildContext context) async {
   /*final db = Db(mongo);
   await db.open();
 
@@ -43,17 +43,49 @@ Future<void> updateAttendance(String scannedCode) async {
     },
     body: requestBodyJson,
   );
+void showSuccessPopup( String responseBody) async {
+  showDialog(
+    context: context, // Provide the BuildContext
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Alert'),
+        content: Text(responseBody),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+   if (response.statusCode == 200) {
 
-  if (response.statusCode == 200) {
+
+
+
+
+
     // Successful PATCH request
-    final responseBody = json.decode(response.body);
-    print('PATCH request successful. Response: $responseBody');
-  } else {
+    final  responseBody = json.decode(response.body);
+    
+    showSuccessPopup('$responseBody');
+    print('Response: $responseBody');
+    
+    // Show a successful attendance popup
+    
+  } /*else {
     // Error in PATCH request
     print('PATCH request failed with status code: ${response.statusCode}');
     print('Response body: ${response.body}');
+    showSuccessPopup("Error in QR Code");
   }
+*/
 }
+
 
 /*import 'package:http/http.dart' as http;
 import 'dart:convert';
