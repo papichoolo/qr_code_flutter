@@ -4,7 +4,7 @@
  
 
 Future<void> updateAttendance(String scannedCode) async {
-  /*final db = Db('mongodb+srv://foundanand:bHKKExvQUotd8Yp7@vitevents.jpidt5u.mongodb.net/?retryWrites=true&w=majority/datascienceclub');
+  /*final db = Db(mongo);
   await db.open();
 
   final collection = db.collection('TESTING');
