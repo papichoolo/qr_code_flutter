@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-
+import 'mongo.dart';
 class QRScannerScreen extends StatefulWidget {
   const QRScannerScreen({super.key});
   
@@ -38,10 +38,33 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
         child: Center(
           child: Text( 
             'Scanned Code: $scannedCode',
-            style:  const TextStyle(fontSize: 10),
+            style:  const TextStyle(fontSize: 15),
             )
              ),
-      )
+      ),
+      ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Navigate back to HomeScreen
+              },
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white, backgroundColor: Colors.red, // Text color
+                padding: const EdgeInsets.all(12), // Button padding
+              ),
+              child: const Text('Go Back to Home'),
+              
+            ),
+            ElevatedButton(
+        onPressed: () {
+          // Call the updateAttendance function with the scannedCode
+          updateAttendance(scannedCode);
+        },
+        style: ElevatedButton.styleFrom(
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.red,
+          padding: const EdgeInsets.all(12),
+        ),
+        child: const Text('Mark Present'),
+      ),
      ]),
 
     );
