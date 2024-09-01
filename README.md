@@ -1,4 +1,4 @@
 # qr_code_flutter
 
 
-peanut butter jrlly time 
+Used to fetch student records from MongoDB databse using an AWS Endpoint and Created a QR Code Attendance Scanner. Go to: 
